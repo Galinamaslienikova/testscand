@@ -1,0 +1,1 @@
+export {default} from '@scandipwa/scandipwa/src/component/Progressbar/Progressbar.container'

@@ -1,0 +1,90 @@
+@keyframes lines{
+    0%{
+        background: var(--secondary-dark-color);
+    }
+   
+    100%{
+        background:(--primary-base-color);
+    }
+}
+.progressBar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height:var(--breadcrumbs-height);
+  background: var(--breadcrumbs-background);
+  justify-content: space-between;
+  border-bottom: 1px solid var(--breadcrumbs-background);
+  border-top: 1px solid var(--breadcrumbs-background);
+  .firstLine,.thirdLine{
+      width:37%;
+      height: 4px;
+      background:var(--secondary-dark-color) ;
+      transition: 2s;
+  }
+  .secondLine{
+      width: 20%;
+      height: 4px;
+      background:var(--secondary-dark-color) ;
+  }
+  .firstCircle,.secondCircle{
+      position: relative;
+      width: 30px;
+      .number{
+          display: inline-block;
+          position: absolute;
+          width:30px;
+          height: 30px;
+          border-radius:50% ;
+          color: white;
+          text-align: center;
+          background: var(--secondary-dark-color) ;
+          top:-50%;
+          line-height: 31px;
+          transition: 2s;
+        }
+        .isActiveCircle{
+            background: var(--primary-base-color) ;
+        }
+        .check::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            opacity: var(--check-mark-opacity);
+            transition: opacity 150ms ease-in;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 5px;
+            width: 12px;
+            height: 6px;
+            transform: rotate(135deg) translateX(-5px);
+            border-right: 2px solid white;
+            border-top: 2px solid white;
+        }
+        .name{
+            position: absolute;
+            top:130%;
+            left:-50%;
+            color:var(--secondary-dark-color);
+            z-index: 2;
+            white-space: nowrap;
+        }
+        .activeName{
+            color:black;
+            font-weight: bold;
+        }
+    }
+    
+    .isActiveLine{
+       animation: lines 2s linear;
+       background:var(--primary-base-color);
+    }
+}
+.names{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height:var(--breadcrumbs-height);
+    background: var(--breadcrumbs-background);
+}
